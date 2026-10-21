@@ -2,46 +2,46 @@
 
 class Plant():
     def __init__(self, name: str, height: float, age: int) -> None:
-        if():
-            pass
+        self.name = name
+        self.height = height
+        self.age = age
+        self._height = 0.0
+        self._age = 0
 
-        else:
-            self.name = name
-            self.height = height
-            self.age_days = age
+        self.set_age(age)
+        self.set_height(height)
+        print(f"Plant created: {self.name}: {self._height}cm, {self._age} days old")
 
     def show(self) -> None:
-        print(f"Created: {self.name}: {self.height}cm, {self.age_days} days old")
+        print(f"Current state: {self.name}: {self._height}cm, {self._age} days old")
 
-    def grow(self) -> None:
-        self.height += 2
+    def set_height(self, height: float) -> None:
+        if height < 0:
+            print(f"{self.name}: Error, height can't be negative")
+            print("Height update rejected")
+            return
+        self._height = height
+        print(f"height updated: {self._height}cm")
 
-    def add_age(self) -> None:
-        self.age_days += 1
+    def set_age(self, age: int) -> None:
+        if age < 0:
+            print(f"{self.name}: Error, age can't be negative")
+            print("Age update rejected")
+            return
+        self._age = age
+        print(f"age updated: {self._age} days")
 
-    def get_height(self):
-        pass
+    def get_height(self) -> int:
+        return self.height
 
-    def get_age(self):
-        pass
-
-    def set_height(self):
-        pass
-
-    def set_age(self):
-        pass
+    def get_age(self) -> int:
+        return self.age
 
 
 if __name__ == "__main__":
     print("=== Garden Security System ===")
     rose = Plant("rose", 13.0, 30)
-    tree = Plant("tree", 100.5, 100)
-    grass = Plant("grass", 20.3, 30)
-    carrot = Plant("carrot", 15.5, 60)
-    SunFlower = Plant("SunFlower", 100.5, 30)
-
+    rose.set_height(25.0)
+    rose.set_height(-10.0)
+    rose.set_age(31)
     rose.show()
-    tree.show()
-    grass.show()
-    carrot.show()
-    SunFlower.show()
