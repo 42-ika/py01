@@ -17,7 +17,11 @@ class Plant():
             self._show_cnt += 1
 
         def show(self) -> None:
-            print(f"Stats: {self._grow_cnt} grow, {self._age_cnt} age, {self._show_cnt} show")
+            print(
+                f"Stats: {self._grow_cnt} grow, "
+                f"{self._age_cnt} age, "
+                f"{self._show_cnt} show"
+            )
 
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
@@ -133,6 +137,8 @@ class Tree(Plant):
             super().show()
             print(f" {self._shade_cnt} shade")
 
+    _stats: Stats
+
     def __init__(
         self,
         name: str,
@@ -146,7 +152,6 @@ class Tree(Plant):
     def show(self) -> None:
         super().show()
         print(f" Trunk diameter: {self.trunk_diameter}cm")
-        
 
     def produce_shade(self) -> None:
         print(
@@ -154,7 +159,6 @@ class Tree(Plant):
             f"long and {self.trunk_diameter}cm wide."
         )
         self._stats.record_shade()
-
 
 
 class Vegetable(Plant):
@@ -185,7 +189,6 @@ class Vegetable(Plant):
 
 def statistics(plant: Plant) -> None:
     plant.show_stats()
-
 
 
 if __name__ == "__main__":
@@ -230,7 +233,6 @@ if __name__ == "__main__":
     sunflower.bloom()
     sunflower.show()
     statistics(sunflower)
-
 
     print("=== Anonymous")
     unknown = Plant.create_anonymous()
