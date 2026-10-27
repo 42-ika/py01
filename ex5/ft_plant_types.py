@@ -78,7 +78,6 @@ class Tree(Plant):
     def show(self) -> None:
         super().show()
         print(f" Trunk diameter: {self.trunk_diameter}cm")
-        
 
     def produce_shade(self) -> None:
         print(
@@ -111,6 +110,7 @@ class Vegetable(Plant):
     def age(self) -> None:
         super().age()
         self.nutritional_value += 1
+
 
 if __name__ == "__main__":
     print("=== Garden Plant Types ===")

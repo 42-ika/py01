@@ -10,10 +10,16 @@ class Plant():
 
         self.set_age(age)
         self.set_height(height)
-        print(f"Plant created: {self.name}: {self._height}cm, {self._age} days old")
+        print(
+            f"Plant created: {self.name}: {self._height}cm, "
+            f"{self._age} days old"
+        )
 
     def show(self) -> None:
-        print(f"Current state: {self.name}: {self._height}cm, {self._age} days old")
+        print(
+            f"Current state: {self.name}: {self._height}cm, "
+            f"{self._age} days old"
+        )
 
     def set_height(self, height: float) -> None:
         if height < 0:
@@ -31,7 +37,7 @@ class Plant():
         self._age = age
         print(f"age updated: {self._age} days")
 
-    def get_height(self) -> int:
+    def get_height(self) -> float:
         return self.height
 
     def get_age(self) -> int:
